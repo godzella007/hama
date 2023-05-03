@@ -125,32 +125,37 @@ class Tutorial extends Component {
 
     return (
       <div>
+      
       <div className="content-body">
         {currentTutorial ? (
           <div className="edit-form">
+             <div className="card profile-card card-bx m-b30">
             <h4>Tutorial</h4>
             <form>
-              <div className="form-group">
-                <label htmlFor="title">Title</label>
+            <div className="form-row">
+            <div className="form-group col-md-6">
+                <label htmlFor="title">l'Entriprise</label>
                 <input
                   type="text"
                   className="form-control"
                   id="title"
-                  value={currentTutorial.title}
-                  onChange={this.onChangeTitle}
+                  value={currentTutorial.NomEntriprise}
+                  onChange={this.onChangeNomEntriprise}
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
+              <div className="form-group col-md-6">
+                <label htmlFor="description">Title de Projet</label>
                 <input
                   type="text"
                   className="form-control"
                   id="description"
-                  value={currentTutorial.description}
-                  onChange={this.onChangeDescription}
+                  value={currentTutorial.title}
+                  onChange={this.onChangetitle}
                 />
               </div>
-              <div className="form-group">
+              </div>
+              <div className="form-row">
+            <div className="form-group col-md-6">
                 <label htmlFor="Numbre_Equipe">Numbre_Equipe</label>
                 <input
                   type="text"
@@ -160,17 +165,19 @@ class Tutorial extends Component {
                   onChange={this.onChangeNumbre_Equipe}
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="NomEntriprise">NomEntriprise</label>
+              <div className="form-group col-md-6">
+                <label htmlFor="NomEntriprise">Description de Projet</label>
                 <input
                   type="text"
                   className="form-control"
                   id="NomEntriprise"
-                  value={currentTutorial.NomEntriprise}
-                  onChange={this.onChangeNomEntriprise}
+                  value={currentTutorial.description}
+                  onChange={this.onChangedescription}
                 />
               </div>
-              <div className="form-group">
+              </div>
+              <div className="form-row">
+            <div className="form-group col-md-6">
                 <label htmlFor="Date_début">Date_début</label>
                 <input
                   type="text"
@@ -180,7 +187,7 @@ class Tutorial extends Component {
                   onChange={this.onChangeDate_début}
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group col-md-6">
                 <label htmlFor=" Date_fin"> Date_fin</label>
                 <input
                   type="text"
@@ -190,7 +197,9 @@ class Tutorial extends Component {
                   onChange={this.onChangeDate_fin}
                 />
               </div>
-              <div className="form-group">
+              </div>
+              <div className="form-row">
+              <div className="form-group col-md-6">
                 <label htmlFor="Rules"> Rules</label>
                 <input
                   type="text"
@@ -200,7 +209,8 @@ class Tutorial extends Component {
                   onChange={this.onChangeRules}
                 />
               </div>
-              <div className="form-group">
+              </div>
+              <div className="form-group col-md-6">
                 <label>
                   <strong>Status:</strong>
                 </label>
@@ -210,7 +220,7 @@ class Tutorial extends Component {
 
             {currentTutorial.published ? (
               <button
-                className="badge badge-primary mr-2"
+              class="btn btn-warning"
                 onClick={() => this.updateStatus(false)}
               >
                 UnPublish
@@ -219,7 +229,7 @@ class Tutorial extends Component {
             ) : (
 
               <button
-                className="badge badge-primary mr-2"
+              class="btn btn-primary"
                 onClick={() => this.updateStatus(true)}
               
               >
@@ -228,7 +238,7 @@ class Tutorial extends Component {
             )}
 
             <button
-              className="badge badge-danger mr-2"
+            class="btn btn-danger"
               onClick={this.removeTutorial}
             >
               Delete
@@ -236,13 +246,13 @@ class Tutorial extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              class="btn btn-success"
               onClick={this.updateContent}
             >
               Update
             </button>
             <p>{this.state.message}</p>
-          </div>
+            </div></div>
         ) : (
           <div>
             <br />

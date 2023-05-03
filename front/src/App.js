@@ -15,11 +15,12 @@ import BoardAdmin from "./app/components/BoardAdmin";
 import Tutorial from "./app/components/tutorialcomponent";
 import TutorialsList from "./app/components/tutorials-listcomponent";
 import AddTutorial from "./app/components/add-tutorialcomponent";
-
+import Hackathons from "./app/components/hackathons";
 import { logout } from "./app/slices/auth";
 
 import EventBus from "./app/common/EventBus";
 import EditProfile from "./app/components/EditProfile";
+import Ajouter from "./app/components/Ajouter";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -61,7 +62,7 @@ const App = () => {
                <Link to={"/home"} className="navbar-brand">
             DevHack
           </Link>
-          {showUserBoard &&( 
+         
           <div className="navbar-nav mr-auto">
           <div className="header-left">
   <div className="input-group search-area">
@@ -79,7 +80,7 @@ const App = () => {
 
      
           </div>
-          )}
+          
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -115,7 +116,7 @@ const App = () => {
           )}
           
         </nav>
-        </div>  
+     
         {showUserBoard &&( 
  <BoardUser/>
  )}
@@ -127,7 +128,7 @@ const App = () => {
     <BoardModerator/>
   )
 }
-   </div>  
+   </div>     </div>  
    
        
 
@@ -147,7 +148,8 @@ const App = () => {
             <Route path="/tutorials/:id" element={<Tutorial/>} />
             <Route path="/RestPassword" element={<RestPassword/>} />
             <Route path="/EditProfile" element={<EditProfile/>} />
-         
+            <Route path="/hackathons" element={<Hackathons/>} />
+            <Route path="/Ajouter" element={<Ajouter/>} />
           </Routes>
         </div>
     

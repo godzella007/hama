@@ -46,12 +46,12 @@ const Register = () => {
   });
 
   const handleRegister = (formValue) => {
-    const { username, email, password,profil,country } = formValue;
+    const { username, email, password,profil } = formValue;
 const roles = [profil]
-const countrys =[country]
+
     setSuccessful(false);
 
-    dispatch(register({ username, email, password,roles,countrys }))
+    dispatch(register({ username, email, password,roles }))
       .unwrap()
       .then(() => {
         setSuccessful(true);

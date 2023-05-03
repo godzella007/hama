@@ -59,11 +59,11 @@ const BoardUser = () => {
                 </a>
                 <ul role="menu" >
                   
-                <li>  <Link to={"#"} className="nav-link">
+                <li>  <Link to={"/hackathons"} className="nav-link">
                 Hackathons
                 </Link></li>
                    
-                <li>  <Link to={"#"} className="nav-link">
+                <li>  <Link to={"/Ajouter"} className="nav-link">
                 Quiz
                 </Link></li>
                 <li>  <Link to={"#"} className="nav-link">

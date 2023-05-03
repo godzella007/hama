@@ -12,12 +12,8 @@ const User = mongoose.model(
         ref: "Role"
       }
     ]
-    countrys: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Role"
-      }
-    ]
+    
+   
   })
 );
 

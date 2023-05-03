@@ -95,7 +95,7 @@ class TutorialsList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Tutorials List</h4>
+          <h4>List de ajouter </h4>
 
           <ul className="list-group">
             {tutorials &&
@@ -113,20 +113,22 @@ class TutorialsList extends Component {
               ))}
           </ul>
 
-          <button
-            className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllTutorials}
-          >
-            Remove All
-          </button>
+         
         </div>
+       
         <div className="col-md-6">
           {currentTutorial ? (
            <div>
-           <h4>Tutorial</h4>
+           <h4>hackathons ajouter</h4>
            <div>
              <label>
                <strong>Nom de Entriprise :</strong>
+             </label>{" "}
+             {currentTutorial.NomEntriprise}
+           </div>
+           <div>
+             <label>
+               <strong> Title de Projet:</strong>
              </label>{" "}
              {currentTutorial.title}
            </div>
@@ -134,14 +136,16 @@ class TutorialsList extends Component {
              <label>
                <strong>Number de Equipe :</strong>
              </label>{" "}
-             {currentTutorial.description}
+             {currentTutorial.Numbre_Equipe}
            </div>
+
            <div>
              <label>
-               <strong>Rules :</strong>
+               <strong>Description de Projet:</strong>
              </label>{" "}
-             {currentTutorial.Rules}
+             {currentTutorial.description}
            </div>
+       
            <div>
              <label>
                <strong>Date début :</strong>
@@ -156,10 +160,11 @@ class TutorialsList extends Component {
            </div>
            <div>
              <label>
-               <strong>Status:</strong>
+               <strong>Rules :</strong>
              </label>{" "}
-             {currentTutorial.published ? "Published" : "Pending"}
+             {currentTutorial.Rules}
            </div>
+         
 
            <Link
              to={"/tutorials/" + currentTutorial.id}
@@ -168,6 +173,7 @@ class TutorialsList extends Component {
             view
            </Link>
          </div>
+         
        ) : (
          <div>
            <br />
