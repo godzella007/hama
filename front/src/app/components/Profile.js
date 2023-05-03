@@ -10,7 +10,8 @@ const Profile = () => {
   }
 
   return (
-<>
+<><div className="content-body">
+
 <div className="row gutters-sm">
   <div className="col-md-4 mb-3">
     <div className="card">
@@ -119,7 +120,7 @@ const Profile = () => {
 </div>
 </div>
 </div>
-</div>
+</div></div>
 </>
    
   );

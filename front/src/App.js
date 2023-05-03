@@ -19,6 +19,7 @@ import AddTutorial from "./app/components/add-tutorialcomponent";
 import { logout } from "./app/slices/auth";
 
 import EventBus from "./app/common/EventBus";
+import EditProfile from "./app/components/EditProfile";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -54,18 +55,31 @@ const App = () => {
   return (
     <Router>
       <div>
-      
+      <div id="main-wrapper">
         <nav className="navbar navbar-expand navbar-dark bg-dark">
          
                <Link to={"/home"} className="navbar-brand">
             DevHack
           </Link>
-       
+          {showUserBoard &&( 
           <div className="navbar-nav mr-auto">
-       
+          <div className="header-left">
+  <div className="input-group search-area">
+    <span className="input-group-text"><a href=";">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8.78605" cy="8.78605" r="8.23951" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14.5168 14.9447L17.7471 18.1667" stroke="white" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </a></span>
+    <input type="text" className="form-control" placeholder="Search" />
+    
+  </div>
+
+</div>
+
      
           </div>
-
+          )}
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -78,8 +92,8 @@ const App = () => {
               <li className="nav-item">
                 <a href="/login" className="nav-link" onClick={logOut}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+  <path fillRule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+  <path fillRule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
 </svg>  LogOut
                 </a>
               </li>
@@ -101,15 +115,21 @@ const App = () => {
           )}
           
         </nav>
-  
-   </div>  
-   
+        </div>  
         {showUserBoard &&( 
  <BoardUser/>
  )}
 { showAdminBoard &&(
 <BoardAdmin/>
 )}
+{
+  showModeratorBoard &&(
+    <BoardModerator/>
+  )
+}
+   </div>  
+   
+       
 
         <div className="container mt-3">
           <Routes>
@@ -126,7 +146,7 @@ const App = () => {
             <Route path="/add" element={<AddTutorial/>} />
             <Route path="/tutorials/:id" element={<Tutorial/>} />
             <Route path="/RestPassword" element={<RestPassword/>} />
-         
+            <Route path="/EditProfile" element={<EditProfile/>} />
          
           </Routes>
         </div>

@@ -69,7 +69,7 @@ class AddTutorial extends Component {
     const { title, description,Rules,Date_début,Date_fin,NomEntriprise,Numbre_Equipe } = this.state;
 
     this.props
-      .createTutorial({ title, description,Rules,Date_début,Date_fin,NomEntriprise,Numbre_Equipe})
+      .createTutorial({title, description,Rules,Date_début,Date_fin,NomEntriprise,Numbre_Equipe})
       .unwrap()
       .then((data) => {
         this.setState({
@@ -108,6 +108,7 @@ class AddTutorial extends Component {
 
   render() {
     return (
+      <div className="content-body">
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
@@ -117,9 +118,13 @@ class AddTutorial extends Component {
             </button>
           </div>
         ) : (
-          <div>
-            
-            <div className="form-group">
+
+          <div className="card profile-card card-bx m-b30">
+           
+                <h6 >Ajouter Hackathons </h6>
+           
+            <div className="form-row">
+            <div className="form-group col-md-6">
               <label htmlFor="NomEntriprise">l'Entriprise </label>
               <input
                 type="text"
@@ -131,7 +136,7 @@ class AddTutorial extends Component {
                 name="NomEntriprise"
               />
             </div>
-            <div className="form-group">
+            <div className="form-group col-md-6">
               <label htmlFor="title">Title de Projet </label>
               <input
                 type="text"
@@ -143,8 +148,9 @@ class AddTutorial extends Component {
                 name="title"
               />
             </div>
-   
-            <div className="form-group">
+   </div>
+   <div className="form-row">
+            <div className="form-group col-md-6">
               <label htmlFor="Numbre_Equipe">Numbre_Equipe </label>
               <input
                 type="text"
@@ -158,7 +164,7 @@ class AddTutorial extends Component {
             </div>
    
             
-            <div className="form-group">
+            <div className="form-group col-md-6">
               <label htmlFor="description">Description de Projet</label>
               <input
                 type="text"
@@ -170,20 +176,11 @@ class AddTutorial extends Component {
                 name="description"
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="description">Rules</label>
-              <input
-                type="text"
-                className="form-control"
-                id="rules"
-                required
-                value={this.state.Rules}
-                onChange={this.onChangeRules}
-                name="rules"
-              />
             </div>
-            <div className="form-group">
-              <label htmlFor="description">Date_début</label>
+            <div className="form-row">
+            <div className="form-group col-md-6">
+            
+               <label htmlFor="description">Date_début</label>
               <input
                 type="Date"
                 className="form-control"
@@ -194,8 +191,8 @@ class AddTutorial extends Component {
                 name="Date_début"
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="description">Date_fin</label>
+            <div className="form-group col-md-6">
+            <label htmlFor="description">Date_fin</label>
               <input
                 type="Date"
                 className="form-control"
@@ -206,14 +203,29 @@ class AddTutorial extends Component {
                 name="Date_fin"
               />
             </div>
-            
+            </div>
+            <div className="form-row">
+            <div className="form-group col-md-6">
+             
+               <label htmlFor="description">Rules</label>
+              <input
+                type="text"
+                className="form-control"
+                id="rules"
+                required
+                value={this.state.Rules}
+                onChange={this.onChangeRules}
+                name="rules"
+              />
+            </div>
+            </div>
 
-            <button onClick={this.saveTutorial} className="btn btn-success">
+            <button onClick={this.saveTutorial} className="btn btn-primary ">
               Submit
             </button>
           </div>
         )}
-      </div>
+      </div></div>
     );
   }
 }

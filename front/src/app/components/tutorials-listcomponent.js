@@ -72,6 +72,7 @@ class TutorialsList extends Component {
     const { tutorials } = this.props;
 
     return (
+      <div className="content-body">
       <div className="list row">
         <div className="col-md-8">
           <div className="input-group mb-3">
@@ -174,7 +175,7 @@ class TutorialsList extends Component {
          </div>
        )}
      </div>
-   </div>
+   </div></div>
  );
 }
 

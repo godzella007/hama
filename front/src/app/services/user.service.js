@@ -1,21 +1,19 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:8081/api/test/";
+import http from "../http-common";
 
 const getPublicContent = () => {
-  return axios.get(API_URL + "all");
+  return http.get("/test/all");
 };
 
 const getUserBoard = () => {
-  return axios.get(API_URL + "user");
+  return http.get("/test/user");
 };
 
 const getModeratorBoard = () => {
-  return axios.get(API_URL + "mod");
+  return http.get("/test/mod");
 };
 
 const getAdminBoard = () => {
-  return axios.get(API_URL + "admin");
+  return http.get("/test/admin");
 };
 
 const UserService = {

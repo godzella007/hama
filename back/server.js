@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const dbConfig = require("./app/config/db.config");
+
 
 const app = express();
 
@@ -21,7 +21,7 @@ const Role = db.role;
 const Tutorial = db.tutorials;
 
 db.mongoose
-  .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
+  .connect(db.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

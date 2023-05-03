@@ -125,6 +125,7 @@ class Tutorial extends Component {
 
     return (
       <div>
+      <div className="content-body">
         {currentTutorial ? (
           <div className="edit-form">
             <h4>Tutorial</h4>
@@ -149,7 +150,56 @@ class Tutorial extends Component {
                   onChange={this.onChangeDescription}
                 />
               </div>
-
+              <div className="form-group">
+                <label htmlFor="Numbre_Equipe">Numbre_Equipe</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="Numbre_Equipe"
+                  value={currentTutorial.Numbre_Equipe}
+                  onChange={this.onChangeNumbre_Equipe}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="NomEntriprise">NomEntriprise</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="NomEntriprise"
+                  value={currentTutorial.NomEntriprise}
+                  onChange={this.onChangeNomEntriprise}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Date_début">Date_début</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="Date_début"
+                  value={currentTutorial.Date_début}
+                  onChange={this.onChangeDate_début}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor=" Date_fin"> Date_fin</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id=" Date_fin"
+                  value={currentTutorial.Date_fin}
+                  onChange={this.onChangeDate_fin}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="Rules"> Rules</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="Rules"
+                  value={currentTutorial.Rules}
+                  onChange={this.onChangeRules}
+                />
+              </div>
               <div className="form-group">
                 <label>
                   <strong>Status:</strong>
@@ -199,7 +249,7 @@ class Tutorial extends Component {
             <p>Please click on a Tutorial...</p>
           </div>
         )}
-      </div>
+      </div></div>
     );
   }
 }

@@ -1,5 +1,3 @@
 module.exports = {
-  HOST: "127.0.0.1",
-  PORT: 27017,
-  DB: "db_fin"
+  url:  'mongodb+srv://aymen45:123456789Ah@cluster0.w9thx6j.mongodb.net/Hack?retryWrites=true&w=majority'
 };

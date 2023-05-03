@@ -2,14 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 function ResetPassword() {
   return (
-    <div className="container">
-      <div className="row vh-100 d-flex justify-content-center">
-        <div className="col-12 align-self-center">
-          <div className="row">
-            <div className="col-lg-5 mx-auto">
-              <div className="card">
-                <div className="card-body p-0 auth-header-box">
-                  <div className="text-center p-3">
+    <div className="col-md-12 signup-form">
+    <div className="card card-container">
+    <div className="text-center p-3">
                   <Link to={"/home"} className="nav-link"> 
                       <img
                         src="4.png"
@@ -23,9 +18,7 @@ function ResetPassword() {
                     </h4>
                     <p className="text-muted  mb-0">
                       Enter your Email and instructions will be sent to you!
-                    </p>
-                  </div>
-                </div>
+                 </p>
                 <div className="card-body">
                   <ResetPasswordForm />
                   <p className="text-muted mb-0 mt-3">
@@ -35,13 +28,7 @@ function ResetPassword() {
                     </Link>
                   </p>
                 </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+                </div></div></div>
   );
 }
 
@@ -52,6 +39,7 @@ function ResetPasswordForm() {
   };
 
   return (
+    
     <form
       className="form-horizontal auth-form"
       onSubmit={handleSubmit}

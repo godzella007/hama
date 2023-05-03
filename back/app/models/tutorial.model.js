@@ -3,7 +3,12 @@ module.exports = mongoose => {
     {
       title: String,
       description: String,
-      published: Boolean
+      published: Boolean,
+      Rules:String,
+      NomEntriprise:String,
+      Numbre_Equipe:Number,
+      Date_début:String,
+      Date_fin:String,
     },
     { timestamps: true }
   );
